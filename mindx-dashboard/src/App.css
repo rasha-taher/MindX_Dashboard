@@ -35,7 +35,8 @@
 }
 
 .login-button{
-  height: 35px;
+  height: 40px;
+  font-size: 15px;
   width: 150px;
   cursor: pointer;
   border: none;
@@ -51,7 +52,9 @@
   .dashboard-container{
     height: 100vh;
     display: flex;
+   
 }
+
 .side-menu{
   background: linear-gradient(
     180deg,
@@ -83,6 +86,7 @@
 }
 .content-title{
     font-size: 35px;
+    margin-bottom: 15px;
 }
 .content-table{
   border-collapse: collapse;
@@ -107,10 +111,60 @@
  font-size: 18px;
 }
 
-
+.login-label{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
 .add{
   background-color: chartreuse;
 }
 .delete{
   background-color: tomato;
+}
+
+.home{
+  background: linear-gradient(
+    180deg,
+    rgba(203, 140, 201, 0.8) 56.25%,
+    rgba(170, 121, 221, 0.51) 100%
+    );
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+ 
+}
+h2{
+  margin-bottom: 10px;
+}
+.k {
+  margin-right: 100px;
+}
+.home-container{
+  width: 500px;
+  height: 350px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addLesson{
+  display: flex;
+  flex-direction: column;
+
+}
+
+select{
+  height: 50px;
+}
+
+.lang-exp{
+  width: 300px;
+  height: 300px;
+  resize: none;
+}
+.quiz{
+  display: flex;
+  flex-direction: column;
 }
