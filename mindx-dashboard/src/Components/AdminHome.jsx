@@ -1,7 +1,7 @@
 import Teachers_reequest from "./Teachers_reequest";
 import Teachers from "./Teachers";
 import { useState } from "react";
-import Users from "./Users";
+import Students from "./Students";
 
 function AdminHome() {
   const [activeSection, setActiveSection] = useState(null);
@@ -14,8 +14,8 @@ function AdminHome() {
       case "Teachers":
         setActiveSection("Teachers");
         break;
-      case "users":
-        setActiveSection("users");
+      case "students":
+        setActiveSection("students");
         break;
       case "lessons":
         setActiveSection("lessons");
@@ -44,9 +44,9 @@ function AdminHome() {
             {" "}
             Lessons
           </li>
-          <li className="dash-menu-li" onClick={() => handleClick("users")}>
+          <li className="dash-menu-li" onClick={() => handleClick("students")}>
             {" "}
-            Users
+            Students Enrolled
           </li>
         </ul>
       </div>
@@ -56,20 +56,20 @@ function AdminHome() {
           style={{
             display: activeSection === "teachers_request" ? "block" : "none",
           }}
-        >
-          <Teachers />
+        > <Teachers_reequest />
+         
         </div>
         <div
           id="Teachers"
           style={{ display: activeSection === "Teachers" ? "block" : "none" }}
         >
-          <Teachers_reequest />
+          <Teachers />
         </div>
         <div
-          id="users"
-          style={{ display: activeSection === "users" ? "block" : "none" }}
+          id="students"
+          style={{ display: activeSection === "students" ? "block" : "none" }}
         >
-          <Users />
+          <Students />
         </div>
       </div>
     </div>

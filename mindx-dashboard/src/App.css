@@ -168,3 +168,38 @@ select{
   display: flex;
   flex-direction: column;
 }
+
+.box{
+  height: 150px;
+  width: 350px;
+  border: 2px solid #e67e9f;
+  border-radius: 20px;
+  
+}
+.p-box{
+  font-size: 15px;
+  margin-bottom: 10px;
+  background-color: #e67e9f;
+  border-radius: 20px;
+  height: 30%;
+  padding: 5px;
+}
+
+.button{
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.is-danger{
+  background-color: tomato;
+}
+.dec-box{
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
