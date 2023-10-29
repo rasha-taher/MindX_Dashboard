@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Lessons = () => {
+const EnrolledStudents = () => {
   return (
-    <div>
+  
       <div>
-      <p className='content-title'>Student's Information</p>
+      <p className='content-title'>Student's Enrolled In Your Courses</p>
       <table className='content-table'>
         <thead>
           <tr>
@@ -16,6 +16,7 @@ const Lessons = () => {
           </tr>
         </thead>
         <tbody>
+         
               <tr key="">
                 <td className='content-data'></td>
                 <td className='content-data'></td>
@@ -30,11 +31,11 @@ const Lessons = () => {
                   </button>
                 </td>
               </tr>
+        
         </tbody>
       </table>
-      </div>
-    </div>
+  </div>
   )
 }
 
-export default Lessons
+export default EnrolledStudents
