@@ -59,7 +59,6 @@ const FormAddQuiz = ({ teachId }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-       
         const res3 = await axios.get(
           `http://127.0.0.1:8000/language/getLanguageByTechearId/${teachId}`
         );
@@ -88,6 +87,7 @@ const FormAddQuiz = ({ teachId }) => {
             value={languageId}
             onChange={(e) => setLanguageId(e.target.value)}
           >
+            <option className="login-input">choose language: </option>
             {data &&
               data.map((info) => (
                 <option
@@ -162,7 +162,10 @@ const FormAddQuiz = ({ teachId }) => {
           />
         </label>
 
-        <button className="login-button"> Add Quiz Question</button>
+        <button type="submit" className="login-button">
+          {" "}
+          Add Quiz Question
+        </button>
       </form>
     </div>
   );

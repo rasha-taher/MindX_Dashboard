@@ -96,6 +96,7 @@ const FormAddContent = ({ teacherId }) => {
                 value={languageId}
                 onChange={(e) => setLanguageId(e.target.value)}
               >
+                <option className="login-input">Choose a language :</option>
                 {data &&
                   data.map((info) => (
                     <option

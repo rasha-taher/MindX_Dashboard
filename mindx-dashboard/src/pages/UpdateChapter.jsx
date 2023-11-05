@@ -10,11 +10,11 @@ const UpdateChapter = ({ teacherId }) => {
     const fetchData = async () => {
       try {
         const res3 = await axios.get(
-          `http://127.0.0.1:8000/chapter/getChapterByLanguageId/${teacherId}`
+          `http://127.0.0.1:8000/chapter/getChapterByTeacherId/${teacherId}`
         );
-        console.log("res3c", res3);
+        console.log("C", res3);
         setData(res3.data.data);
-        console.log("d", data);
+        console.log("d", res3.data.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
