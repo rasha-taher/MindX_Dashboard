@@ -1,0 +1,9 @@
+.updateComponent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 27px 27px;
+}
+.updateComponent-div {
+  margin: 0px 60px;
+}

@@ -1,14 +1,14 @@
-import LessonContent from "./LessonContent";
+import LessonContent from "../pages/LessonContent";
 import { useState } from "react";
-import AddLesson from "./AddLesson";
-import Quizz from "./Quizz";
+import AddLesson from "../pages/AddLesson";
+import Quizz from "../pages/Quizz";
 import TeacherAppoitment from "./TeacherAppoitment";
 import Students from "./Students";
 import EnrolledStudents from "./EnrolledStudents";
 
 const TeacherHome = () => {
   const [activeSection, setActiveSection] = useState(null);
-
+const idTeacher=localStorage.getItem("objectGreeting");
   const handleClick = (section) => {
     switch (section) {
       case "Teachers":
@@ -81,7 +81,7 @@ const TeacherHome = () => {
               display: activeSection === "AddLanguage" ? "block" : "none",
             }}
           >
-            <AddLesson />
+            <AddLesson idTeach={idTeacher} />
           </div>
 
           <div
@@ -90,13 +90,13 @@ const TeacherHome = () => {
               display: activeSection === "AddLesson" ? "block" : "none",
             }}
           >
-            <LessonContent />
+            <LessonContent idTeach={idTeacher} />
           </div>
           <div
             id="quizz"
             style={{ display: activeSection === "quizz" ? "block" : "none" }}
           >
-            <Quizz />
+            <Quizz idTeach={idTeacher} />
           </div>
           <div
             id="appoitment"
@@ -107,11 +107,11 @@ const TeacherHome = () => {
             <TeacherAppoitment />
           </div>
           <div
-          id="students"
-          style={{ display: activeSection === "students" ? "block" : "none" }}
-        >
-          <EnrolledStudents />
-        </div>
+            id="students"
+            style={{ display: activeSection === "students" ? "block" : "none" }}
+          >
+            <EnrolledStudents />
+          </div>
         </div>
       </div>
     </div>

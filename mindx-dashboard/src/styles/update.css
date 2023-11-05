@@ -1,0 +1,10 @@
+.update-main {
+  border: 1px solid black;
+     margin: 10px auto;
+}
+.update {
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    margin: 27px 2px;
+  padding-left: 29px;  }

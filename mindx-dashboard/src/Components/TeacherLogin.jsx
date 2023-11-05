@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 const TeacherLogin = () => {
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,18 +16,20 @@ const TeacherLogin = () => {
   }
 
   const handleLogin = async () => {
-    const response = await fetch('http://localhost:5000/teacher/teacherLogin', {
-      method: 'POST',
+    const response = await fetch("http://127.0.0.1:8000/teacher/teacherLogin", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(formData),
     });
 
     const data = await response.json();
-
+    
     if (data.success) {
-  
+      
+      localStorage.setItem("objectGreeting", data.data[0].id);
+      
       window.location.href = "/TeacherHome";
     } else {
       
