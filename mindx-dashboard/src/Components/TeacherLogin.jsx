@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
+=======
+import Cookies from "js-cookie"; // Import the Cookies module
+
+>>>>>>> cc18a253fafd543cfd5e8173d8452c8a78c74fbe
 const TeacherLogin = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -26,18 +31,31 @@ const TeacherLogin = () => {
     const data = await response.json();
 
     if (data.success) {
+<<<<<<< HEAD
       localStorage.setItem("objectGreeting", data.data[0].id);
 
+=======
+      Cookies.set("teacherId", data.data[0].id, { expires: 7 }); // Set the teacherId in a cookie that expires in 7 days
+>>>>>>> cc18a253fafd543cfd5e8173d8452c8a78c74fbe
       window.location.href = "/TeacherHome";
     } else {
       alert("One of the information is incorrect");
     }
   };
+<<<<<<< HEAD
   return (
     <div id="login">
       <div className="form-container">
         <h2> Teacher Login</h2>
         <label className="login-label"> User Name :</label>
+=======
+
+  return (
+    <div id="login">
+      <div className="form-container">
+        <h2>Teacher Login</h2>
+        <label className="login-label">User Name:</label>
+>>>>>>> cc18a253fafd543cfd5e8173d8452c8a78c74fbe
         <input
           type="text"
           className="login-input"
@@ -45,7 +63,11 @@ const TeacherLogin = () => {
           value={formData.name}
           onChange={handleChange}
         />
+<<<<<<< HEAD
         <label className="login-label"> Email: </label>
+=======
+        <label className="login-label">Email:</label>
+>>>>>>> cc18a253fafd543cfd5e8173d8452c8a78c74fbe
         <input
           type="text"
           className="login-input"
@@ -53,7 +75,11 @@ const TeacherLogin = () => {
           value={formData.email}
           onChange={handleChange}
         />
+<<<<<<< HEAD
         <label className="login-label"> Password: </label>
+=======
+        <label className="login-label">Password:</label>
+>>>>>>> cc18a253fafd543cfd5e8173d8452c8a78c74fbe
         <input
           type="password"
           className="login-input"

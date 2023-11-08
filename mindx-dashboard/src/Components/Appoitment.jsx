@@ -1,26 +1,14 @@
-import React, { useState, useEffect } from "react";
-import Cookies from "js-cookie";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const EnrolledStudents = () => {
-  const [teacherId, setTeacherId] = useState("");
-
-  useEffect(() => {
-    // Retrieve the teacherId from the cookie when the component mounts
-    const storedTeacherId = Cookies.get("teacherId");
-
-    if (storedTeacherId) {
-      setTeacherId(storedTeacherId);
-    }
-  }, []);
+const Appoitment = () => {
   const url = "http://localhost:5000";
   const [data, setData] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const fetchData = () => {
-    const teacherId = Cookies.get("teacherId");
-    const apiUrl = url + `/language/getLanguages/${teacherId}`;
+    const apiUrl = url + "/appoitment/getAll";
     axios
       .get(apiUrl)
       .then((response) => {
@@ -33,7 +21,7 @@ const EnrolledStudents = () => {
 
   const deleteStudent = (id) => {
     axios
-      .delete(url + `/studentInfo/deleteStudentInfo/${id}`)
+      .delete(url + `/appoitment/delete/${id}`)
       .then((response) => {
         console.log(response.data);
         fetchData();
@@ -69,9 +57,9 @@ const EnrolledStudents = () => {
       <table className="content-table">
         <thead>
           <tr>
-            <th className="content-data">Student Id</th>
-            <th className="content-data">Name</th>
-            <th className="content-data"></th>
+            <th className="content-data">Appoitment_Name</th>
+            <th className="content-data">Appoitment_Date</th>
+            <th className="content-data">Appoitment_Start_Time</th>
             <th className="content-data">Appoitment_End_Time</th>
             <th className="content-data">Status </th>
             <th className="content-data">Student_ID</th>
@@ -138,4 +126,4 @@ const EnrolledStudents = () => {
   );
 };
 
-export default EnrolledStudents;
+export default Appoitment;
