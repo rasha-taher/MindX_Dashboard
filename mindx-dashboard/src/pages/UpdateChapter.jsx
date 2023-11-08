@@ -4,13 +4,12 @@ import "../styles/update.css";
 import axios from "axios";
 import UpdateContent from "../Components/UpdateContent";
 const UpdateChapter = ({ teacherId }) => {
- 
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res3 = await axios.get(
-          `http://127.0.0.1:8000/chapter/getChapterByTeacherId/${teacherId}`
+          `http://localhost:5000/chapter/getChapterByTeacherId/${teacherId}`
         );
         console.log("C", res3);
         setData(res3.data.data);

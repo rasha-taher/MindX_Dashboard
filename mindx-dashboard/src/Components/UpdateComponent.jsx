@@ -44,7 +44,7 @@ const UpdateComponent = ({
   const deleteLanguageHandler = (id) => {
     console.log(id);
     axios
-      .delete(`http://127.0.0.1:8000/language/deleteLanguageById/${id}`)
+      .delete(`http://localhost:5000/language/deleteLanguageById/${id}`)
       .then((res) => {
         console.log(res);
       });

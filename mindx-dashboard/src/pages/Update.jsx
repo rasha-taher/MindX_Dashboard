@@ -8,7 +8,7 @@ const Update = ({ techId }) => {
     const fetchData = async () => {
       try {
         const res3 = await axios.get(
-          `http://127.0.0.1:8000/language/getLanguageByTechearId/${techId}`
+          `http://localhost:5000/language/getLanguageByTechearId/${techId}`
         );
         console.log("res3", res3);
         console.log("res3.data", res3.data);
@@ -35,7 +35,6 @@ const Update = ({ techId }) => {
       {data &&
         data.map((info) => (
           <UpdateComponent
-            
             id={info.language_id}
             idTech={techId}
             languageName={info.language_name}

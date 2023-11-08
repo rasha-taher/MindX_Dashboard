@@ -19,7 +19,6 @@ const Modal = ({
   const [nameLanguage, setNameLanguage] = useState(languageName);
   const [daysComplete, setDaysComlete] = useState(daysToComplete);
   const [imageLanguage, setImageLanguage] = useState(languagePicture);
-  
 
   const [error, setError] = useState("");
   const showHideClassName = show ? "modal display-block" : "modal display-none";
@@ -61,7 +60,7 @@ const Modal = ({
     try {
       await axios
         .put(
-          `http://127.0.0.1:8000/language/updateLanguageById/${id}`,
+          `http://localhost:5000/language/updateLanguageById/${id}`,
           formData,
           {
             headers: {

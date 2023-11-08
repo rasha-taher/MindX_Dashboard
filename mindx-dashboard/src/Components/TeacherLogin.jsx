@@ -1,22 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 const TeacherLogin = () => {
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    password: ""
+    password: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
-  }
+  };
 
   const handleLogin = async () => {
-    const response = await fetch("http://127.0.0.1:8000/teacher/teacherLogin", {
+    const response = await fetch("http://localhost:5000/teacher/teacherLogin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,49 +24,49 @@ const TeacherLogin = () => {
     });
 
     const data = await response.json();
-    
+
     if (data.success) {
-      
       localStorage.setItem("objectGreeting", data.data[0].id);
-      
+
       window.location.href = "/TeacherHome";
     } else {
-      
       alert("One of the information is incorrect");
     }
-  }
+  };
   return (
-    <div id='login'>
-      <div className='form-container'>
+    <div id="login">
+      <div className="form-container">
         <h2> Teacher Login</h2>
-        <label className='login-label'> User Name :</label>
+        <label className="login-label"> User Name :</label>
         <input
-          type='text'
-          className='login-input'
+          type="text"
+          className="login-input"
           name="name"
           value={formData.name}
           onChange={handleChange}
         />
-        <label className='login-label'> Email: </label>
+        <label className="login-label"> Email: </label>
         <input
-          type='text'
-          className='login-input'
+          type="text"
+          className="login-input"
           name="email"
           value={formData.email}
           onChange={handleChange}
         />
-        <label className='login-label'> Password:  </label>
+        <label className="login-label"> Password: </label>
         <input
-          type='password'
-          className='login-input'
+          type="password"
+          className="login-input"
           name="password"
           value={formData.password}
           onChange={handleChange}
         />
-        <button className='login-button' onClick={handleLogin}>Log In</button>
+        <button className="login-button" onClick={handleLogin}>
+          Log In
+        </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TeacherLogin
+export default TeacherLogin;
