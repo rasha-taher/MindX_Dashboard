@@ -3,6 +3,8 @@ import Teachers from "./Teachers";
 import { useState } from "react";
 import Students from "./Students";
 import AdminAppoitment from "./AdminAppoitment";
+import { Link } from "react-router-dom";
+import AddTeacher from "./AddTeacher";
 
 function AdminHome() {
   const [activeSection, setActiveSection] = useState(null);
@@ -18,11 +20,12 @@ function AdminHome() {
       case "students":
         setActiveSection("students");
         break;
-      case "lessons":
-        setActiveSection("lessons");
-        break;
+      
       case "appoitment":
         setActiveSection("appoitment");
+        break;
+        case "addTeacher":
+        setActiveSection("addTeacher");
         break;
       default:
         setActiveSection(null);
@@ -31,7 +34,7 @@ function AdminHome() {
   return (
     <div className="dashboard-container">
       <div className="side-menu">
-        <p className="dash-title"> MindX</p>
+      <Link to="/Dashboard"> <p className="dash-title"> MindX</p></Link> 
         <ul className="dash-menu-ul">
           <li
             className="dash-menu-li"
@@ -40,14 +43,18 @@ function AdminHome() {
             {" "}
             Teacher's Request
           </li>
+          <li
+            className="dash-menu-li"
+            onClick={() => handleClick("addTeacher")}
+          >
+            {" "}
+            Add a Teacher
+          </li>
           <li className="dash-menu-li" onClick={() => handleClick("Teachers")}>
             {" "}
             Teachers
           </li>
-          <li className="dash-menu-li" onClick={() => handleClick("lessons")}>
-            {" "}
-            Lessons
-          </li>
+          
           <li className="dash-menu-li" onClick={() => handleClick("students")}>
             {" "}
             Students Enrolled
@@ -76,6 +83,12 @@ function AdminHome() {
           style={{ display: activeSection === "Teachers" ? "block" : "none" }}
         >
           <Teachers />
+        </div>
+        <div
+          id="addTeacher"
+          style={{ display: activeSection === "addTeacher" ? "block" : "none" }}
+        >
+          <AddTeacher/>
         </div>
         <div
           id="students"

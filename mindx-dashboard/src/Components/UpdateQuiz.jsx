@@ -9,7 +9,7 @@ const UpdateQuiz = ({ teachId }) => {
     const fetchData = async () => {
       try {
         const res3 = await axios.get(
-          `http://127.0.0.1:8000/quiz/getQuizByTeacherId/${teachId}`
+          `http://localhost:5000/quiz/getQuizByTeacherId/${teachId}`
         );
         console.log("res3", res3);
         console.log("res3.data", res3.data);

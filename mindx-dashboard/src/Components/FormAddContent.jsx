@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-
+import '../App.css'
 import { useState, useEffect } from "react";
 const FormAddContent = ({ teacherId }) => {
   const [languageId, setLanguageId] = useState("");
@@ -29,7 +29,7 @@ const FormAddContent = ({ teacherId }) => {
 
     try {
       await axios
-        .post("http://127.0.0.1:8000/chapter/addChapter", formData, {
+        .post("http://localhost:5000/chapter/addChapter", formData, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -64,7 +64,7 @@ const FormAddContent = ({ teacherId }) => {
     const fetchData = async () => {
       try {
         const res3 = await axios.get(
-          `http://127.0.0.1:8000/language/getLanguageByTechearId/${teacherId}`
+          `http://localhost:5000/language/getLanguageByTechearId/${teacherId}`
         );
         console.log("res3", res3);
         console.log("res3.data", res3.data);
@@ -83,7 +83,7 @@ const FormAddContent = ({ teacherId }) => {
       <p className="content-title"> Add a lesson</p>
       <div className="addLesson">
         <form
-          style={{ display: "flex", flexDirection: "row", columnGap: "20px" }}
+          style={{ display: "flex", flexDirection: "column", columnGap: "20px" }}
           onSubmit={handleSubmit}
           encType="multipart/form-data"
         >

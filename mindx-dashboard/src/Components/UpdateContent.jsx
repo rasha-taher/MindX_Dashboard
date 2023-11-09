@@ -1,62 +1,60 @@
-import React from 'react'
+import React from "react";
 import { useState } from "react";
 
 import axios from "axios";
 import "../styles/updateComponent.css";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import DialogDelete from "./DialogDelete";
-import ModalChapter from './ModalChapter';
+import ModalChapter from "./ModalChapter";
 
 const UpdateContent = ({
-    id,
-    languageId,
-    chapterContent,
-    chapterName,
-    question1,
-    answer1,
-    question2,
-    answer2,
-    question3,
-    answer3,
+  id,
+  languageId,
+  chapterContent,
+  chapterName,
+  question1,
+  answer1,
+  question2,
+  answer2,
+  question3,
+  answer3,
 }) => {
-     const [show, setShow] = useState(false);
-     const [dialog, setDialog] = useState({ message: "", isLoading: false });
-     const [back, setBack] = useState(false);
-     const showModal = () => setShow(true);
-     const hideModal = () => {
-       setShow(false);
-     };
-     function areYouSure(choose) {
-       console.log("funare");
-       if (choose) {
-         setBack(true);
-         deleteLanguageHandler(id);
-         setDialog({ message: "", isLoading: false });
-         window.location.reload();
-       } else {
-         setBack(false);
-         setDialog({ message: "", isLoading: false });
-       }
-     }
-     const showDialogHandler = () => {
-       setDialog({
-         message: "are you sure to delete?",
-         isLoading: true,
-       });
-     };
+  const [show, setShow] = useState(false);
+  const [dialog, setDialog] = useState({ message: "", isLoading: false });
+  const [back, setBack] = useState(false);
+  const showModal = () => setShow(true);
+  const hideModal = () => {
+    setShow(false);
+  };
+  function areYouSure(choose) {
+    console.log("funare");
+    if (choose) {
+      setBack(true);
+      deleteLanguageHandler(id);
+      setDialog({ message: "", isLoading: false });
+      window.location.reload();
+    } else {
+      setBack(false);
+      setDialog({ message: "", isLoading: false });
+    }
+  }
+  const showDialogHandler = () => {
+    setDialog({
+      message: "are you sure to delete?",
+      isLoading: true,
+    });
+  };
 
-     const deleteLanguageHandler = (id) => {
-       console.log(id);
-       axios
-         .delete(`http://127.0.0.1:8000/chapter/deleteChapterById/${id}`)
-         .then((res) => {
-           console.log(res);
-         });
-     };
+  const deleteLanguageHandler = (id) => {
+    console.log(id);
+    axios
+      .delete(`http://localhost:5000/chapter/deleteChapterById/${id}`)
+      .then((res) => {
+        console.log(res);
+      });
+  };
   return (
     <div className="updateComponent">
-     
-     
       <div className="updateComponent-div">{chapterName}</div>
       <div className="updateComponent-div">{chapterContent}</div>
       <div className="updateComponent-div">{question1}</div>
@@ -92,6 +90,6 @@ const UpdateContent = ({
       )}
     </div>
   );
-}
+};
 
-export default UpdateContent
+export default UpdateContent;

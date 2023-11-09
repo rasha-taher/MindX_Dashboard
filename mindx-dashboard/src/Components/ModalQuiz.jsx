@@ -3,8 +3,8 @@ import "../styles/modal.css";
 import axios from "axios";
 import { AiFillCloseSquare } from "react-icons/ai";
 const ModalQuiz = ({
-    show,
-    handleClose,
+  show,
+  handleClose,
   id,
   languageId,
   quiz,
@@ -15,7 +15,7 @@ const ModalQuiz = ({
   answer,
 }) => {
   const [question, setQuestion] = useState(quiz);
-   const [grade, setGrade] = useState("25");
+  const [grade, setGrade] = useState("25");
   const [optionOne, setOptionOne] = useState(option1);
   const [optionTwo, setOptionTwo] = useState(option2);
   const [optionThree, setOptionThree] = useState(option3);
@@ -28,7 +28,7 @@ const ModalQuiz = ({
     const formData = new FormData();
     formData.append("language_id", languageId);
     formData.append("quiz", quiz);
-     formData.append("grade", grade);
+    formData.append("grade", grade);
     formData.append("option1", optionOne);
     formData.append("option2", optionTwo);
     formData.append("option3", optionThree);
@@ -37,7 +37,7 @@ const ModalQuiz = ({
 
     try {
       await axios
-        .put(`http://127.0.0.1:8000/quiz/updateQuizById/${id}`, formData, {
+        .put(`http://localhost:5000/quiz/updateQuizById/${id}`, formData, {
           headers: {
             "Content-Type": "application/json",
           },

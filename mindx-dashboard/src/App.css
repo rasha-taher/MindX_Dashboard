@@ -203,3 +203,33 @@ select{
   align-items: center;
   justify-content: center;
 }
+
+.search{
+  height: 25px;
+  width: 250px;
+  border: 1px solid #e67e9f;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-right: 8px; 
+}
+
+.dash-button{
+  height: 50px;
+  width: 100px;
+  padding: 15px;
+  background-color: #e67e9f;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.select-lang{
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  padding: 5px;
+}
+.side-menu a {
+  text-decoration: none;
+}

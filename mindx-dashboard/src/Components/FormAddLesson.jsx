@@ -46,7 +46,7 @@ const FormAddLesson = ({ techId }) => {
     console.log("3", imageLanguage);
     try {
       await axios
-        .post("http://127.0.0.1:8000/language/addLanguage", formData, {
+        .post("http://localhost:5000/language/addLanguage", formData, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -93,12 +93,17 @@ const FormAddLesson = ({ techId }) => {
         <label className="login-label">
           Category of the Language :
           <select
+          className="select-lang"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
             <option value="choose">Choose</option>
             <option value="frontend">Frontend</option>
             <option value="backend">Backend</option>
+            <option value="other">Software Development</option>
+            <option value="other">Web Development</option>
+            <option value="other">Cyber Security</option>
+            <option value="other">Data Science</option>
             <option value="other">Other</option>
           </select>
         </label>

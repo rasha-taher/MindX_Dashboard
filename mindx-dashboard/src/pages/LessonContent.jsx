@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import FormAddContent from "../Components/FormAddContent";
 import UpdateChapter from "./UpdateChapter";
 
-const LessonContent = ({idTeach}) => {
+const LessonContent = ({ idTeach }) => {
   const [activeSection, setActiveSection] = useState("default");
   const handleClick = (section) => {
     switch (section) {
@@ -48,7 +48,7 @@ const LessonContent = ({idTeach}) => {
 
     try {
       await axios
-        .post("http://127.0.0.1:8000/chapter/addChapter", formData, {
+        .post("http://localhost:5000/chapter/addChapter", formData, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -83,13 +83,13 @@ const LessonContent = ({idTeach}) => {
     const fetchData = async () => {
       try {
         const res3 = await axios.get(
-          `http://127.0.0.1:8000/language/getLanguageByTechearId/${idTeach}`
+          `http://localhost:5000/language/getLanguageByTechearId/${idTeach}`
         );
         console.log("languagec", res3);
         console.log("lang.data", res3.data);
 
         setData(res3.data.data);
-        console.log("id",data.language_id)
+        console.log("id", data.language_id);
       } catch (error) {
         console.error("Error fetching data:", error);
       }

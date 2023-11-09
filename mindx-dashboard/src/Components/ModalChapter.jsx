@@ -17,7 +17,7 @@ const ModalChapter = ({
   question3,
   answer3,
 }) => {
-    const [languageid, setLanguageid] = useState(idLanguage);
+  const [languageid, setLanguageid] = useState(idLanguage);
   const [nameChapter, setNameChapter] = useState(chapterName);
   const [contentChapter, setContentChapter] = useState(chapterContent);
   const [oneQuestion, setOneQuestion] = useState(question1);
@@ -40,12 +40,11 @@ const ModalChapter = ({
     formData.append("answer1", secondAnswer);
     formData.append("question2", thirdQuestion);
     formData.append("answer2", thirdAnswer);
-  
-    
+
     try {
       await axios
         .put(
-          `http://127.0.0.1:8000/chapter/updateChapterById/${id}`,
+          `http://localhost:5000/chapter/updateChapterById/${id}`,
           formData,
           {
             headers: {
@@ -53,7 +52,7 @@ const ModalChapter = ({
             },
           }
         )
-.then((response) => {
+        .then((response) => {
           window.location.reload();
           alert("added succesful");
         });
@@ -62,7 +61,6 @@ const ModalChapter = ({
       setError("An error occurred while adding Skill.");
     }
   };
-
 
   return (
     <div className={showHideClassName}>
@@ -122,7 +120,7 @@ const ModalChapter = ({
               />
             </label>
             <label style={{ paddingLeft: "5px" }}>
-             Answer 2 :
+              Answer 2 :
               <input
                 style={{ padding: "5px", marginLeft: "10px" }}
                 type="text"
@@ -160,7 +158,7 @@ const ModalChapter = ({
             border: " 1px solid white",
             borderRadius: "12px",
             backgroundColor: "#D5A9DB",
-            color: "white"
+            color: "white",
           }}
           onClick={handleSubmit}
         >
