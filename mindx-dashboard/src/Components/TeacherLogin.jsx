@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
-=======
-import Cookies from "js-cookie"; // Import the Cookies module
+import Cookies from "js-cookie"; 
 
 >>>>>>> cc18a253fafd543cfd5e8173d8452c8a78c74fbe
 const TeacherLogin = () => {
